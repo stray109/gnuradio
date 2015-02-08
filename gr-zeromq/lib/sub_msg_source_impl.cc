@@ -101,7 +101,11 @@ namespace gr {
 
           message_port_pub(pmt::mp("out"), m);
         } else {
+#ifdef _MSC_VER
+		  Sleep(0);
+#else
           usleep(100);
+#endif
         }
       }
     }

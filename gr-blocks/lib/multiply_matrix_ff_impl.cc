@@ -59,6 +59,8 @@ namespace gr {
       );
     }
 
+	const std::string multiply_matrix_ff::MSG_PORT_NAME_SET_A = "set_A";
+
     multiply_matrix_ff_impl::~multiply_matrix_ff_impl()
     {
     }

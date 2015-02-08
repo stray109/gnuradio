@@ -48,7 +48,8 @@ namespace gr {
       d_loop.set_taps(LOOP_FILTER_TAP);
       reset();
     }
-
+	const double atsc_sync_impl::LOOP_FILTER_TAP = 0.0005;	// 0.0005 works
+    const double atsc_sync_impl::ADJUSTMENT_GAIN = 1.0e-5 / (10 * ATSC_DATA_SEGMENT_LENGTH);
     void
     atsc_sync_impl::reset()
     {
