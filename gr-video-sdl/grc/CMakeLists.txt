@@ -1,4 +1,4 @@
-# Copyright 2014,2015 Free Software Foundation, Inc.
+# Copyright 2011 Free Software Foundation, Inc.
 #
 # This file is part of GNU Radio
 #
@@ -18,28 +18,10 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    dtv_atsc_deinterleaver.xml
-    dtv_atsc_depad.xml
-    dtv_atsc_derandomizer.xml
-    dtv_atsc_equalizer.xml
-    dtv_atsc_fpll.xml
-    dtv_atsc_fs_checker.xml
-    dtv_atsc_rs_decoder.xml
-    dtv_atsc_rx.xml
-    dtv_atsc_rx_filter.xml
-    dtv_atsc_sync.xml
-    dtv_atsc_viterbi_decoder.xml
-    dtv_block_tree.xml
-    dtv_atsc_pad.xml
-    dtv_atsc_randomizer.xml
-    dtv_atsc_rs_encoder.xml
-    dtv_atsc_interleaver.xml
-    dtv_atsc_trellis_encoder.xml
-    dtv_atsc_field_sync_mux.xml
-    dtv_dvb_bbheader_bb.xml
-    dtv_dvb_bbscrambler_bb.xml
-    dtv_dvb_bch_bb.xml
-    dtv_dvb_ldpc_bb.xml
-    DESTINATION ${GRC_BLOCKS_DIR}
-    COMPONENT "dtv_python"
+    video_sdl_sink.xml
+    video_block_tree.xml
+
+    DESTINATION share/gnuradio/grc/blocks
 )
+
+
