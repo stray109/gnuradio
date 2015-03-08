@@ -80,7 +80,7 @@ endif(HAVE_POSIX_MEMALIGN)
 ########################################################################
 # detect x86 flavor of CPU
 ########################################################################
-if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "^(i.86|x86|x86_64|amd64)$")
+if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "^(i.86|x86|x86_64|AMD64)$")
     message(STATUS "x86* CPU detected")
     set(CPU_IS_x86 TRUE)
 endif()
