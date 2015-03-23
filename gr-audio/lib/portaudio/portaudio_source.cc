@@ -30,6 +30,7 @@
 #include <gnuradio/io_signature.h>
 #include <gnuradio/prefs.h>
 #include <stdio.h>
+#include <io.h>
 #include <iostream>
 #include <unistd.h>
 #include <stdexcept>
@@ -121,7 +122,11 @@ namespace gr {
 
       else {			// overrun
         self->d_noverruns++;
-        ssize_t r = ::write(2, "aO", 2);	// FIXME change to non-blocking call
+#ifdef _MSC_VER
+		ssize_t r = _write(2, "aU", 2);  // FIXME change to non-blocking call
+#else
+        ssize_t r = ::write(2, "aU", 2);  // FIXME change to non-blocking call
+#endif
         if(r == -1) {
           perror("audio_portaudio_source::portaudio_source_callback write error to stderr.");
         }

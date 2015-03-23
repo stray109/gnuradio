@@ -50,7 +50,8 @@ namespace gr {
   {
     static fs::path path;
     path = fs::path(gr::appdata_path()) / ".gnuradio" / "prefs" / key;
-    return path.string().c_str();
+	static std::string pathstr = path.string();
+    return pathstr.c_str();
   }
 
   static void

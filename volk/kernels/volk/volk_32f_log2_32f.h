@@ -74,6 +74,9 @@
   \param aVector The input vector of floats
   \param num_points Number of points for which log is to be computed
 */
+
+#define log2(x)  (log(x)/0.30103f)
+
 static inline void volk_32f_log2_32f_generic(float* bVector, const float* aVector, unsigned int num_points){
     float* bPtr = bVector;
     const float* aPtr = aVector;
