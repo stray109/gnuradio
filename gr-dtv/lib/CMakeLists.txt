@@ -91,6 +91,9 @@ list(APPEND dtv_sources
   dvbt2/dvbt2_paprtr_cc_impl.cc
   dvbt2/dvbt2_p1insertion_cc_impl.cc
   dvbt2/dvbt2_miso_cc_impl.cc
+  dvbs2/dvbs2_interleaver_bb_impl.cc
+  dvbs2/dvbs2_modulator_bc_impl.cc
+  dvbs2/dvbs2_physical_cc_impl.cc
 )
 
 if(ENABLE_GR_CTRLPORT)
@@ -99,11 +102,11 @@ list(APPEND dtv_sources
 endif(ENABLE_GR_CTRLPORT)
 
 list(APPEND dtv_libs
-    volk
     gnuradio-runtime
     gnuradio-analog
     gnuradio-filter
     gnuradio-fec
+    ${VOLK_LIBRARIES}
 )
 
 #Add Windows DLL resource file if using MSVC
