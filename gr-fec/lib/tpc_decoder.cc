@@ -52,10 +52,10 @@ tpc_decoder::tpc_decoder (std::vector<int> row_polys, std::vector<int> col_polys
     // TODO: should we verify this and throw an error if it doesn't match?  YES
     // hwo do we do that?
 
-    rowEncoder_K = ceil(log(d_rowpolys[0])/log(2));    // rowEncoder_K is the constraint length of the row encoder polynomial
+    rowEncoder_K = ceil(logf(d_rowpolys[0])/logf(2));    // rowEncoder_K is the constraint length of the row encoder polynomial
     rowEncoder_n = d_rowpolys.size();
     rowEncoder_m = rowEncoder_K - 1;
-    colEncoder_K = ceil(log(d_colpolys[0])/log(2));    // colEncoder_K is the constraint length of the col encoder polynomial
+    colEncoder_K = ceil(logf(d_colpolys[0])/logf(2));    // colEncoder_K is the constraint length of the col encoder polynomial
     colEncoder_n = d_colpolys.size();
     colEncoder_m = colEncoder_K - 1;
 

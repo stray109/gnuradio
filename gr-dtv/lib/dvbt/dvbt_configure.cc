@@ -230,39 +230,39 @@ namespace gr {
       // Normalization factor
       switch (d_m) {
         case 2:
-          d_norm = 1.0 / sqrt(2);
+          d_norm = 1.0 / sqrtf(2);
           break;
         case 4:
           if (d_alpha == 1) {
-            d_norm = 1.0 / sqrt(10);
+            d_norm = 1.0 / sqrtf(10);
           }
           if (d_alpha == 2) {
-            d_norm = 1.0 / sqrt(20);
+            d_norm = 1.0 / sqrtf(20);
           }
           if (d_alpha == 4) {
-            d_norm = 1.0 / sqrt(52);
+            d_norm = 1.0 / sqrtf(52);
           }
           break;
         case 6:
           if (d_alpha == 1) {
-            d_norm = 1.0 / sqrt(42);
+            d_norm = 1.0 / sqrtf(42);
           }
           if (d_alpha == 2) {
-            d_norm = 1.0 / sqrt(60);
+            d_norm = 1.0 / sqrtf(60);
           }
           if (d_alpha == 4) {
-            d_norm = 1.0 / sqrt(108);
+            d_norm = 1.0 / sqrtf(108);
           }
           break;
         default:
           if (d_alpha == 1) {
-            d_norm = 1.0 / sqrt(10);
+            d_norm = 1.0 / sqrtf(10);
           }
           if (d_alpha == 2) {
-            d_norm = 1.0 / sqrt(20);
+            d_norm = 1.0 / sqrtf(20);
           }
           if (d_alpha == 4) {
-            d_norm = 1.0 / sqrt(52);
+            d_norm = 1.0 / sqrtf(52);
           }
           break;
       }

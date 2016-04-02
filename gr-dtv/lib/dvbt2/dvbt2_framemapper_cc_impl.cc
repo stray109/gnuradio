@@ -236,7 +236,7 @@ namespace gr {
           eta_mod = 1;
           break;
         case L1_MOD_QPSK:
-          normalization = sqrt(2);
+          normalization = sqrtf(2);
           m_qpsk[0] = gr_complex( 1.0 / normalization,  1.0 / normalization);
           m_qpsk[1] = gr_complex( 1.0 / normalization, -1.0 / normalization);
           m_qpsk[2] = gr_complex(-1.0 / normalization,  1.0 / normalization);
@@ -244,7 +244,7 @@ namespace gr {
           eta_mod = 2;
           break;
         case L1_MOD_16QAM:
-          normalization = sqrt(10);
+          normalization = sqrtf(10);
           m_16qam[0] = gr_complex( 3.0 / normalization,  3.0 / normalization);
           m_16qam[1] = gr_complex( 3.0 / normalization,  1.0 / normalization);
           m_16qam[2] = gr_complex( 1.0 / normalization,  3.0 / normalization);
@@ -264,7 +264,7 @@ namespace gr {
           eta_mod = 4;
           break;
         case L1_MOD_64QAM:
-          normalization = sqrt(42);
+          normalization = sqrtf(42);
           m_64qam[0] = gr_complex(  7.0 / normalization,   7.0 / normalization);
           m_64qam[1] = gr_complex(  7.0 / normalization,   5.0 / normalization);
           m_64qam[2] = gr_complex(  5.0 / normalization,   7.0 / normalization);

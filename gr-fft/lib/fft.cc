@@ -87,7 +87,8 @@ namespace gr {
     {
       static fs::path path;
       path = fs::path(gr::appdata_path()) / ".gr_fftw_wisdom";
-      return path.string().c_str();
+	  static std::string str = path.string();
+      return str.c_str();
     }
 
     static void

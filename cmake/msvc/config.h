@@ -28,7 +28,10 @@ static inline long long llrint(double x){return (long long)(x > 0.0 ? x + 0.5 : 
 static inline long long llrintf(float x){return (long long)(x > 0.0f ? x + 0.5f : x - 0.5f);}
 static inline double rint(double x){return (x > 0.0)? floor(x + 0.5) : ceil(x - 0.5);}
 static inline float rintf(float x){return (x > 0.0f)? floorf(x + 0.5f) : ceilf(x - 0.5f);}
-
+static inline float  round(float x){return (x > 0.0f)? floorf(x + 0.5f) : ceilf(x - 0.5f);};
+static inline float  log2(float x)  {return logf(x)/logf(2.f);};
+static inline double   copysign(double x,  double y)  {return _copysign(x,y);};
+static inline float    copysignf(float x, float y)    {return (float)_copysign(x,y);};
 ////////////////////////////////////////////////////////////////////////
 // math constants
 ////////////////////////////////////////////////////////////////////////

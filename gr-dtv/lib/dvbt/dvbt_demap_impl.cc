@@ -92,7 +92,7 @@ namespace gr {
       // 16QAM from QPSK and 64QAM from 16QAM
 
       int bits_per_axis = log2(size) / 2;
-      int steps_per_axis = sqrt(size) / 2 - 1;
+      int steps_per_axis = sqrtf(size) / 2 - 1;
 
       for (int i = 0; i < size; i++) {
         // This is the quadrant made of the first two bits starting from MSB

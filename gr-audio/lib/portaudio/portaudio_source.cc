@@ -34,6 +34,7 @@
 #include <unistd.h>
 #include <stdexcept>
 #include <string.h>
+#include <io.h>
 
 namespace gr {
   namespace audio {
@@ -121,7 +122,7 @@ namespace gr {
 
       else {			// overrun
         self->d_noverruns++;
-        ssize_t r = ::write(2, "aO", 2);	// FIXME change to non-blocking call
+        ssize_t r = ::_write(2, "aO", 2);	// FIXME change to non-blocking call
         if(r == -1) {
           perror("audio_portaudio_source::portaudio_source_callback write error to stderr.");
         }

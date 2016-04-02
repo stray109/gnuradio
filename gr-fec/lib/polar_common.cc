@@ -47,7 +47,7 @@ namespace gr {
         d_block_size(block_size), d_block_power((int) log2(float(block_size))),
         d_num_info_bits(num_info_bits)
       {
-        if(pow(2, d_block_power) != d_block_size){
+        if(powf(2, d_block_power) != d_block_size){
           throw std::runtime_error("block_size MUST be a power of 2!");
         }
 

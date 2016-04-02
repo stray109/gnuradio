@@ -25,6 +25,8 @@
 #include <gnuradio/io_signature.h>
 #include "dvbt_bit_inner_deinterleaver_impl.h"
 #include <stdio.h>
+#include <vector>
+using namespace std;
 
 namespace gr {
   namespace dtv {
@@ -135,7 +137,7 @@ namespace gr {
 
       // First index of d_b is Bit interleaver number
       // Second index of d_b is the position inside Bit interleaver
-      unsigned char d_b[d_v][d_bsize];
+      vector< vector<int> > d_b(d_v,vector<int>(d_bsize));
 
       for (int bcount = 0; bcount < bmax; bcount++) {
         for (int w = 0; w < d_bsize; w++) {

@@ -21,6 +21,7 @@
  */
 
 #include <gnuradio/fec/ldpc_decoder.h>
+#include <config.h>
 #include <math.h>
 #include <boost/assign/list_of.hpp>
 #include <volk/volk.h>

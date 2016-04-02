@@ -22,6 +22,7 @@
 
 #include <gnuradio/qtgui/freqcontrolpanel.h>
 #include <cmath>
+#include <config.h>
 
 FreqControlPanel::FreqControlPanel(FreqDisplayForm *form)
   : QVBoxLayout(),

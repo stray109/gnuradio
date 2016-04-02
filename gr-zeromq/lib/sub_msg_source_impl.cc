@@ -101,7 +101,7 @@ namespace gr {
 
           message_port_pub(pmt::mp("out"), m);
         } else {
-          usleep(100);
+          Sleep(1);
         }
       }
     }

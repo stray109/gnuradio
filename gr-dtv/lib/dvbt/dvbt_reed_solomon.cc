@@ -245,16 +245,16 @@ namespace gr {
     int
     dvbt_reed_solomon::rs_decode(unsigned char *data, unsigned char *eras, const int no_eras)
     {
-      unsigned char sigma[2 * d_t + 1];
-      unsigned char b[2 * d_t + 1];
-      unsigned char T[2 * d_t + 1];
-      unsigned char reg[2 * d_t + 1];
-      unsigned char root[2 * d_t + 1];
-      unsigned char loc[2 * d_t + 1];
-      unsigned char omega[2 * d_t];
+      vector<unsigned char> sigma(2 * d_t + 1);
+       vector<unsigned char> b(2 * d_t + 1);
+       vector<unsigned char> T(2 * d_t + 1);
+      vector<unsigned char> reg(2 * d_t + 1);
+       vector<unsigned char> root(2 * d_t + 1);
+       vector<unsigned char> loc(2 * d_t + 1);
+       vector<unsigned char> omega(2 * d_t);
 
       // Compute erasure locator polynomial
-      memset(sigma, 0, 2 * d_t + 1);
+      memset(&sigma[0], 0, 2 * d_t + 1);
       sigma[0] = 1;
 
       if (no_eras > 0) {
@@ -302,7 +302,7 @@ namespace gr {
       int r = no_eras;
       int el = no_eras;
 
-      memcpy(b, sigma, 2 * d_t + 1);
+      memcpy(&b[0], &sigma[0], 2 * d_t + 1);
 
       while (++r <= 2 * d_t) {
         int d_discr = 0;
@@ -313,7 +313,7 @@ namespace gr {
 
         if (d_discr == 0) {
           // b(x) = x * b(x)
-          memmove(&b[1], b, 2 * d_t);
+          memmove(&b[1], &b[0], 2 * d_t);
           b[0] = 0;
         }
         else {
@@ -334,10 +334,10 @@ namespace gr {
           }
           else {
             // b(x) = x*b(x)
-            memmove(&b[1], b, 2 * d_t);
+            memmove(&b[1], &b[0], 2 * d_t);
             b[0] = 0;
           }
-          memcpy(sigma, T, 2 * d_t + 1);
+          memcpy(&sigma[0], &T[0], 2 * d_t + 1);
         }
       }
 

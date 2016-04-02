@@ -23,7 +23,7 @@
 #include <gnuradio/fec/tpc_encoder.h>
 #include <gnuradio/fec/tpc_common.h>
 #include <gnuradio/fec/generic_encoder.h>
-
+#include <config.h>
 #include <math.h>
 #include <boost/assign/list_of.hpp>
 #include <volk/volk.h>
@@ -52,10 +52,10 @@ tpc_encoder::tpc_encoder (std::vector<int> row_polys, std::vector<int> col_polys
 
     // calculate the input and output sizes
     inputSize = (d_krow*d_kcol - (d_bval+d_qval));
-    rowEncoder_K = ceil(log(d_rowpolys[0])/log(2));    // rowEncoder_K is the constraint length of the row encoder polynomial
+    rowEncoder_K = ceil(logf(d_rowpolys[0])/logf(2));    // rowEncoder_K is the constraint length of the row encoder polynomial
     rowEncoder_n = d_rowpolys.size();
     rowEncoder_m = rowEncoder_K - 1;
-    colEncoder_K = ceil(log(d_colpolys[0])/log(2));    // colEncoder_K is the constraint length of the col encoder polynomial
+    colEncoder_K = ceil(logf(d_colpolys[0])/logf(2));    // colEncoder_K is the constraint length of the col encoder polynomial
     colEncoder_n = d_colpolys.size();
     colEncoder_m = colEncoder_K - 1;
 

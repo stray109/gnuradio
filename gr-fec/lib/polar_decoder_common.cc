@@ -46,6 +46,8 @@ namespace gr {
       {
       }
 
+	  BOOST_CONSTEXPR_OR_CONST float polar_decoder_common::D_LLR_FACTOR = -2.19722458f;
+
       void
       polar_decoder_common::initialize_decoder(unsigned char* u, float* llrs, const float* input)
       {

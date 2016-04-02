@@ -60,7 +60,7 @@ dump_array(const struct codebook * b, int index)
 
   printf("static const float codes%d[] = {\n", index);
   for ( i = 0; i < limit; i++ ) {
-    printf("  %g", b->cb[i]);
+    printf("  %ef", b->cb[i]);
     if ( i < limit - 1 )
       printf(",");
 
@@ -76,7 +76,7 @@ dump_structure(const struct codebook * b, int index)
 {
   printf("  {\n");
   printf("    %d,\n", b->k);
-  printf("    %g,\n", log(b->m) / log(2));
+  printf("    %ef,\n", log(b->m) / log(2));
   printf("    %d,\n", b->m);
   printf("    codes%d\n", index);
   printf("  }");
